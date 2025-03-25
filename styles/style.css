@@ -229,7 +229,6 @@
   display: block;
   object-fit: cover;
   object-position: center;
-  display: block;
   transition: border 0.3s ease;
   cursor: pointer;
 }
@@ -282,7 +281,7 @@
 .dialog-save:not([open]) {
   pointer-events: none;
   opacity: 0;
-} 
+}
 
 .close {
   inline-size: clamp(16.063rem, 15.27rem + 3.38vw, 18.313rem);
