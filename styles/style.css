@@ -27,19 +27,19 @@
 }
 
 .header {
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), fantasy;
   text-transform: uppercase;
   text-align: center;
   margin-block: 102px;
   padding-block: 128px;
   border-block: 2px solid var(--border-color);
   border-inline: 2px solid var(--border-color);
+  background-color: var(--bg-color);
 }
 
 .content {
   inline-size: var(--content-size);
   align-items: center;
-  background-color: var(--bg-color);
   box-sizing: border-box;
   overflow-wrap: break-word;
   display: grid;
@@ -71,13 +71,13 @@
   font-family: var(--main-font), sans-serif;
   border-block: 2px solid var(--border-color);
   border-inline: 2px solid var(--border-color);
+  background-color: var(--bg-color);
 }
 
 .card__title {
   font-variation-settings: "wght" var(--title--weight);
   text-align: left;
   padding-inline: 10px;
-  min-block-size: 33px;
   font-size: var(--main-size);
   align-content: center;
   padding-block: 3px;
@@ -89,7 +89,7 @@
   gap: 27px;
   line-height: 21px;
   padding-inline: 25px;
-  text-shadow: 0px 4px 4px var(--text-shadow);
+  /*text-shadow: 0px 4px 4px var(--text-shadow); тень добавлена согласно техническому заданию*/
 }
 
 .card__picture {
@@ -108,23 +108,18 @@
 
 .picture-label {
   position: absolute;
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), fantasy;
   font-size: var(--accent-size);
   mix-blend-mode: hard-light;
   top: 25px;
   right: 25px;
   text-shadow: -1px 0 var(--shadow-color), 0 1px var(--shadow-color),
     1px 0 var(--shadow-color), 0 -1px var(--shadow-color);
-  -webkit-text-stroke: 1px var(--shadow-color);
 }
 
-@supports (
-  (text-stroke: 1px var(--shadow-color)) or
-    (-webkit-text-stroke: 1px var(--shadow-color))
-) {
+@supports (-webkit-text-stroke: 1px var(--shadow-color)) {
   .picture-label {
     -webkit-text-stroke: 1px var(--shadow-color);
-    text-stroke: 1px var(--shadow-color);
     text-shadow: none;
   }
 }
@@ -213,7 +208,7 @@
 }
 
 .button__text {
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), fantasy;
   font-size: var(--accent-size);
   line-height: 90%;
   font-style: normal;
@@ -255,9 +250,8 @@
 
 .dialog-save {
   inline-size: clamp(21.063rem, 20.71rem + 1.5vw, 22.063rem);
-  min-block-size: 191px;
   text-transform: uppercase;
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), fantasy;
   font-size: var(--accent-size);
   line-height: 150%;
   color: var(--text-color), #000000;
@@ -265,12 +259,12 @@
   align-items: center;
   justify-items: center;
   overflow-wrap: break-word;
-  padding-inline: 30px;
+  padding-inline: 31.5px;
+  padding-block: 32px;
   box-sizing: border-box;
   position: fixed;
   inset: 0;
   border: 2px solid var(--border-color);
-  overflow: hidden;
   transition: opacity 0.3s ease-in-out;
 }
 
@@ -289,6 +283,7 @@
   grid-column: span 2;
   grid-row: 2;
   line-height: 90%;
+  margin-block-start: 30px;
 }
 
 .dialog-title {
